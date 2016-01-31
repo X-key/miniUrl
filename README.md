@@ -3,14 +3,14 @@
 # Подключение к БД
 - в файле /config.php пропишите свои настройки подключения к вашей БД
 
-	const HOST = "localhost"; // Хост БД
-	const USER = "root"; // Пользователь БД
-	const PASS = "142128"; // Пароль БД
-	const NAME = "links"; // Имя БД
+	HOST = "localhost"; // Хост БД
+	USER = "root"; // Пользователь БД
+	PASS = "142128"; // Пароль БД
+	NAME = "links"; // Имя БД
 	
 		
 # Создание таблицы в БД
-- выполните данный скрипт: miniurl2/script/create_table.php
+- выполните данный скрипт: /script/create_table.php
 - он создаст таблицу links в вашей БД
 
 
