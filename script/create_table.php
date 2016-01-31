@@ -1,8 +1,14 @@
 <?php
 
-require_once "class.db.php" ;
+const HOST = "localhost"; // Хост БД
+const USER = "root"; // Пользователь БД
+const PASS = "142128"; // Пароль БД
+const NAME = "links"; // Имя БД
+
+
+$DBH = new PDO("mysql:host=".HOST.";dbname=".NAME, USER, PASS); // подключение к БД
+
 // Объявил класс и занес его в переменную db
-$db = new Db ;
 
 $query = "CREATE TABLE link (
 
@@ -14,8 +20,8 @@ $query = "CREATE TABLE link (
     PRIMARY KEY (id)
 );";
 
-
-$db ->Sql($query) ;// вызываем метод отправки запроса к бд и передаем ему запрос
+$STH = $DBH->prepare($query);
+$STH->execute();
 
 
 
