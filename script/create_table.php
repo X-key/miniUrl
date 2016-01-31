@@ -1,14 +1,6 @@
 <?php
 
-const HOST = "localhost"; // Хост БД
-const USER = "root"; // Пользователь БД
-const PASS = "142128"; // Пароль БД
-const NAME = "links"; // Имя БД
-
-
-$DBH = new PDO("mysql:host=".HOST.";dbname=".NAME, USER, PASS); // подключение к БД
-
-// Объявил класс и занес его в переменную db
+include "../config.php";
 
 $query = "CREATE TABLE link (
 
@@ -20,8 +12,23 @@ $query = "CREATE TABLE link (
     PRIMARY KEY (id)
 );";
 
-$STH = $DBH->prepare($query);
-$STH->execute();
+
+try
+{
+
+    $DBH = new PDO("mysql:host=".HOST.";dbname=".NAME, USER, PASS); // подключение к БД
+    $STH = $DBH->prepare($query);
+    $STH->execute();
+    echo "таблица создана";
+    header('Refresh:1; URL=http://localhost/miniurl2/');
+
+}
+catch(PDOException $e)
+{
+    echo 'ERROR: ' . $e->getMessage();
+}
+
+
 
 
 

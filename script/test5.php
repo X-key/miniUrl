@@ -1,9 +1,5 @@
 <?php
-
-const HOST = "localhost"; // Хост БД
-const USER = "root"; // Пользователь БД
-const PASS = "142128"; // Пароль БД
-const NAME = "links"; // Имя БД
+include "/config.php";
 
 # подготовка массива данных для записи в БД
 $data_user = array(
@@ -194,7 +190,7 @@ if(!empty($_POST['save']))
     {
         echo "вы не ввели длинную ссылку";
     }
-    header('Refresh:2; URL=http://localhost/miniurl2/');
+
 } else
 {#НЕТ. Не нажал.
 }
@@ -235,6 +231,7 @@ if(!empty($_POST['enter']))
                     header('Refresh:5; URL='.$reslong);
                     exit;
                 }
+                header('Refresh:5; URL=http://localhost/miniurl2/');
             }
         } else
         {
@@ -243,8 +240,9 @@ if(!empty($_POST['enter']))
     }else
     {
         echo "Вы не ввели короткую ссылку";
+        header('Refresh:5; URL=http://localhost/miniurl2/');
     }
-    header('Refresh:2; URL=http://localhost/miniurl2/');
+
 } #НЕТ. Не нажал.
 
 
