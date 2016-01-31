@@ -1,0 +1,11 @@
+{
+    "require": {
+       "twig/twig":"1.23.1"
+    },
+
+    "autoload":{
+      "psr-4":{
+        "MiniUrl\\":"script/"
+      }
+    }
+}
